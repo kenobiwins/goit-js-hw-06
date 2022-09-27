@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+body{
+    margin: 24px;
+}
+.gallery{
+    list-style: none;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+.gallery__item{
+
+}
+img{
+    width: 100%;
+}
