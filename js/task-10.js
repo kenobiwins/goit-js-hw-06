@@ -30,7 +30,6 @@ if (amount > max || amount < min) {
 return boxesContainer;
 };
 
-console.log();
 function destroyBoxes(event) {
     boxesContainer.innerHTML = "";
     inputField.value = "";
