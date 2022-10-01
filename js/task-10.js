@@ -9,13 +9,11 @@ destroyBtn.addEventListener("click", destroyBoxes);
 
 function createBoxes(amount) {
     let incrementValue = 0;
-    amount = inputField.value;
+    amount = Number(inputField.value);
+    const min = Number(inputField.min);
+    const max = Number(inputField.max);
 
-    if (amount > inputField.max || amount < inputField.min) {
-       return alert(`Value should be bigger then ${inputField.min} and less then the number of ${inputField.max} `) 
-    }
-
-    if (amount <= inputField.max || amount >= inputField.min) {
+    if (amount <= max && amount >= min) {
         for (let i = 0; i < amount; i++) {
         const div = document.createElement("div");
         div.style.width = 30 + incrementValue + "px";
@@ -24,9 +22,15 @@ function createBoxes(amount) {
         incrementValue += 10;
         boxesContainer.append(div);
     }
-    }
+}
+
+if (amount > max || amount < min) {
+   return alert(`Value should be bigger then ${min} and less then the number of ${inputField.max} `) 
+}
+return boxesContainer;
 };
 
+console.log();
 function destroyBoxes(event) {
     boxesContainer.innerHTML = "";
     inputField.value = "";
