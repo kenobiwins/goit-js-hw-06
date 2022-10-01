@@ -12,7 +12,7 @@ function createBoxes(amount) {
     amount = inputField.value;
 
     if (amount > inputField.max || amount < inputField.min) {
-       return alert(`Value should be bigger then ${inputField.min} and less ${inputField.max} `) 
+       return alert(`Value should be bigger then ${inputField.min} and less then the number of ${inputField.max} `) 
     }
 
     if (amount <= inputField.max || amount >= inputField.min) {
