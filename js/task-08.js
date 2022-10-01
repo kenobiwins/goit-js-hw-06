@@ -14,7 +14,8 @@ function sendingLoginForm(event) {
             console.log(`${name} : ${value}`);
         })
     };
-    
-    alert("All fields should be filled!!");
+    if (email.value === "" || password.value === "") {
+        alert("All fields should be filled!!");
+    }
     event.currentTarget.reset();
 };

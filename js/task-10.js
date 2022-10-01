@@ -11,13 +11,19 @@ function createBoxes(amount) {
     let incrementValue = 0;
     amount = inputField.value;
 
-    for (let i = 0; i < amount; i++) {
+    if (amount > inputField.max || amount < inputField.min) {
+       return alert(`Value should be bigger then ${inputField.min} and less ${inputField.max} `) 
+    }
+
+    if (amount <= inputField.max || amount >= inputField.min) {
+        for (let i = 0; i < amount; i++) {
         const div = document.createElement("div");
         div.style.width = 30 + incrementValue + "px";
         div.style.height = 30 + incrementValue + "px";
         div.style.backgroundColor = getRandomHexColor();
         incrementValue += 10;
         boxesContainer.append(div);
+    }
     }
 };
 
