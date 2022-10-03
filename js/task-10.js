@@ -12,22 +12,21 @@ function createBoxes(amount) {
     amount = Number(inputField.value);
     const min = Number(inputField.min);
     const max = Number(inputField.max);
+    const container = document.createDocumentFragment();
 
     if (amount <= max && amount >= min) {
         for (let i = 0; i < amount; i++) {
-        const div = document.createElement("div");
-        div.style.width = 30 + incrementValue + "px";
-        div.style.height = 30 + incrementValue + "px";
-        div.style.backgroundColor = getRandomHexColor();
-        incrementValue += 10;
-        boxesContainer.append(div);
+            const div = document.createElement("div");
+            div.style.width = 30 + incrementValue + "px";
+            div.style.height = 30 + incrementValue + "px";
+            div.style.backgroundColor = getRandomHexColor();
+            incrementValue += 10;
+            container.append(div);
     }
+    boxesContainer.append(container);
+} else {
+    alert(`Value should be bigger then ${min} and less then the number of ${inputField.max} `) 
 }
-
-if (amount > max || amount < min) {
-   return alert(`Value should be bigger then ${min} and less then the number of ${inputField.max} `) 
-}
-return boxesContainer;
 };
 
 function destroyBoxes(event) {

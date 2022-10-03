@@ -5,5 +5,8 @@ input.addEventListener("input", outputOperation);
 
 function outputOperation(event) {
     output.textContent = event.currentTarget.value;
-    console.log(event.currentTarget.value);
-}
+    
+    if (!input.value) {
+    output.textContent="Anonymous";
+    }
+};
