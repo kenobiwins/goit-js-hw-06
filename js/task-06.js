@@ -14,7 +14,7 @@ function validation(event) {
     if (currentLength !== validLength) {
         input.classList.add("invalid")
     }
-    if (currentLength === 0) {
+    if (!currentLength) {
         input.classList.remove("valid", "invalid");
     }
 }
