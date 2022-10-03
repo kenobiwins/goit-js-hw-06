@@ -25,7 +25,7 @@ function createBoxes(amount) {
     }
     boxesContainer.append(container);
 } else {
-    alert(`Value should be bigger then ${min} and less then the number of ${inputField.max} `) 
+    alert(`Value should be bigger then ${min} and less then the number of ${max} `) 
 }
 };
 
