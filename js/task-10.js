@@ -12,18 +12,20 @@ function createBoxes(amount) {
     amount = Number(inputField.value);
     const min = Number(inputField.min);
     const max = Number(inputField.max);
-    const container = document.createDocumentFragment();
-
+    // const container = document.createDocumentFragment();
+    
     if (amount <= max && amount >= min) {
+        const container = [];
         for (let i = 0; i < amount; i++) {
             const div = document.createElement("div");
             div.style.width = 30 + incrementValue + "px";
             div.style.height = 30 + incrementValue + "px";
             div.style.backgroundColor = getRandomHexColor();
             incrementValue += 10;
-            container.append(div);
+            container.push(div);
+            // console.log(...container);
     }
-    boxesContainer.append(container);
+    boxesContainer.append(...container);
 } else {
     alert(`Value should be bigger then ${min} and less then the number of ${max} `) 
 }
